@@ -39,6 +39,6 @@
   </script>
   
   <style scoped>
-  @import "@/assets/mystyle.css"; /* Import external CSS */
+  /* @import "@/assets/mystyle.css"; /* Import external CSS */
   </style>
   
