@@ -50,6 +50,8 @@
   </template>
   
   <script>
+  import { supabase } from "../lib/supabase";
+
   export default {
     name: "Resources",
     data() {
@@ -62,15 +64,40 @@
         messages: [],
       };
     },
+    async created() {
+      await this.fetchMessages();
+    },
     methods: {
-      addMessage() {
-        this.messages.push({ ...this.newMessage });
-        this.newMessage.name = "";
-        this.newMessage.message = "";
+      async fetchMessages() {
+        const { data, error } = await supabase.from("guestbook").select("*").order("created_at", { ascending: false });
+        if (error) {
+          console.error("Error fetching messages:", error.message);
+        } else {
+          this.messages = data;
+        }
+      },
+      async addMessage() {
+        if (!this.newMessage.name || !this.newMessage.message) return;
+
+        const { data, error } = await supabase.from("guestbook").insert([
+          {
+            name: this.newMessage.name,
+            message: this.newMessage.message,
+          },
+        ]);
+
+        if (error) {
+          console.error("Error inserting message:", error.message);
+        } else {
+          this.messages.unshift(data[0]); // Add new message to the top of the list
+          this.newMessage.name = "";
+          this.newMessage.message = "";
+        }
       },
     },
   };
   </script>
+
   
   <style scoped>
   @import "../assets/mystyle.css";
