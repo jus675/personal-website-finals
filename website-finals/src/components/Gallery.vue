@@ -1,32 +1,28 @@
 <template>
-    <div>
-      <header>
-        <nav>
-          <ul class="nav-bar">
-            <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/about">About</router-link></li>
-            <li><router-link to="/interests">Interests</router-link></li>
-            <li><router-link to="/gallery">Gallery</router-link></li>
-            <li><router-link to="/resources">Resources</router-link></li>
-          </ul>
-        </nav>
-      </header>
-  
-      <section class="gallery">
-        <h2 class="gallery-title">Gallery</h2>
-        <div class="gallery-container">
-          <img 
-            v-for="(image, index) in galleryImages" 
-            :key="index" 
-            :src="image.src" 
-            :alt="image.alt" 
-            :style="image.style || ''"
-            class="gallery-image"
-          />
+  <div>
+    <header>
+      <nav>
+        <ul class="nav-bar">
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/about">About</router-link></li>
+          <li><router-link to="/interests">Interests</router-link></li>
+          <li><router-link to="/gallery">Gallery</router-link></li>
+          <li><router-link to="/resources">Resources</router-link></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="gallery">
+      <h2 class="gallery-title">Gallery</h2>
+      <div class="gallery-container">
+        <div v-for="(image, index) in galleryImages" :key="index" class="gallery-item">
+          <img :src="image.src" :alt="image.alt" :style="image.style || ''" class="gallery-image" />
         </div>
-      </section>
-    </div>
-  </template>
+      </div>
+    </section>
+  </div>
+</template>
+
   
   <script>
   export default {
@@ -46,10 +42,11 @@
   };
   </script>
   
-  <style scoped>
+  <style>
   @import "../assets/mystyle.css";
   @import "../assets/gallery.css";
   
+  /*
   .gallery-container {
     display: flex;
     flex-wrap: wrap;
@@ -60,5 +57,6 @@
     max-width: 100%;
     height: auto;
   }
+    */
   </style>
   

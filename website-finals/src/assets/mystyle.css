@@ -162,5 +162,120 @@
   
   
   /* GUESTBOOK */
-  
+  /* GUESTBOOK SECTION */
+.guestbook-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 15px;
+  background: rgba(10, 42, 67, 0.9); /* Semi-transparent dark blue */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #6495ED;
+  color: whitesmoke;
+  text-align: left;
+}
+
+.guestbook-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #6495ED;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.guestbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #6495ED;
+  margin-bottom: 5px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #6495ED;
+  border-radius: 5px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #003daf;
+}
+
+.form-textarea {
+  height: 80px;
+  resize: none;
+}
+
+.submit-button {
+  background: #6495ED;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background: pink;
+  color: #003daf;
+}
+
+/* GUESTBOOK MESSAGES */
+.message-list {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(10, 42, 67, 0.8);
+  border-radius: 8px;
+  border: 1px solid #6495ED;
+  color: whitesmoke;
+}
+
+.message-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #6495ED;
+}
+
+.message-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.message-item strong {
+  font-weight: bold;
+  color: #6495ED;
+}
+
+.message-text {
+  flex: 1;
+  margin: 0 10px;
+  color: whitesmoke;
+}
+
+.message-date {
+  font-size: 12px;
+  color: lightgray;
+}
+
   

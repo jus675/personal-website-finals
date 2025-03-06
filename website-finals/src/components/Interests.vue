@@ -63,6 +63,6 @@
   
   <style scoped>
   @import "../assets/mystyle.css";
-  @import "../assets/resources.css";
+  @import "../assets/interests.css";
   </style>
   
